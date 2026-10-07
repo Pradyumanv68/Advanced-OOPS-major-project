@@ -1,41 +1,41 @@
-# SentinelScan — Smart Campus Security
+# SentinelScan Professional UI
 
-SentinelScan is a dual-verification attendance concept combining CCTV face recognition with proximity RFID.
+A deeply redesigned Java Swing prototype for the SentinelScan smart campus security and attendance system.
 
-## Team
-- Pradyuman Verma
-- Kabeer Chhabra
-- Piyush Halder
-- Nihal Rai
+## Design
+- Dark enterprise security dashboard
+- Custom-painted rounded cards and buttons
+- Cyan/blue/gold security accent system
+- Responsive sidebar + top bar
+- Dashboard KPIs
+- Attendance analytics
+- Live verification terminal
+- Student management
+- Attendance monitoring
+- Alerts and audit log
+- Reports
+- Settings
+- Search/filter controls
+- Toast-style status feedback
+- No external libraries required
 
-## Core Flow
-CCTV/IP Camera → Face Recognition
-RFID Reader → Arduino → ESP8266/ESP32 → Wi-Fi/LAN
-Both identities → Cross Verification → Attendance Database → Excel/CSV Report
+## Run
+JDK 17+ recommended.
 
-## Hardware
-- IP Camera
-- Long-range RFID reader
-- RFID cards
-- Arduino
-- ESP8266 / ESP32 Wi-Fi module
-- Router
-- Computer
-- Jumper wires, breadboard and 5V power
+PowerShell:
+```powershell
+.\run.bat
+```
 
-## Software / Tech
-- OpenCV + face-recognition pipeline
-- Java backend / Javalin
-- Database
-- Java UI prototype
-- Excel/CSV reporting
-- Wi-Fi/LAN networking
+Manual:
+```powershell
+if (!(Test-Path out)) { New-Item -ItemType Directory out | Out-Null }
+javac -encoding UTF-8 -d out src\*.java
+java -cp out SentinelScanApp
+```
 
-## Setup Plan
-1. Wire the RFID reader to Arduino.
-2. Add the Wi-Fi module and connect it to the router.
-3. Assign IP addresses to the camera, Arduino/module and computer.
-4. Send card IDs to the server and open the camera stream.
-5. Test the complete flow at the entrance.
+Login:
+admin / admin
 
-> Prototype note: hardware and service integrations are being developed incrementally. 
+## Prototype note
+The live camera and RFID screens are UI simulations. Real CCTV/OpenCV, RFID hardware, Wi-Fi/LAN, Spring Boot and MySQL integrations can be connected to the service layer later.
